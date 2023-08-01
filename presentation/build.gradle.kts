@@ -79,4 +79,6 @@ dependencies {
     //Glide
     implementation(Dependencies.GLIDE)
     annotationProcessor(Dependencies.GLIDE_COMPILER)
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+    implementation("com.faltenreich:skeletonlayout:4.0.0")
 }

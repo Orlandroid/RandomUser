@@ -17,18 +17,27 @@ class RandomUserFragment : BaseFragment<FragmentRandomUserBinding>(R.layout.frag
     private val viewModel: RandomUserViewModel by viewModels()
     override fun setUpUi() {
         viewModel.getUsers()
+        binding.swiperefresh.setOnRefreshListener {
+            binding.swiperefresh.isRefreshing = false
+            viewModel.getUsers()
+        }
     }
 
     @SuppressLint("SetTextI18n")
     override fun observerViewModel() {
         super.observerViewModel()
-        observeApiResult(viewModel.userResponse) { response ->
+        observeApiResult(
+            viewModel.userResponse,
+            onLoading = { binding.skeleton.showSkeleton() },
+            onFinishLoading = { binding.skeleton.showOriginal() },
+            haveTheViewProgress = false
+        ) { response ->
             response.results[0].let { user ->
                 with(binding) {
                     imageUser.loadImage(user.picture.large)
                     tvValueName.text = "${user.name.first} ${user.name.last}"
                     tvValueEmail.text = user.email
-                    tvValueBirthday.text = user.dob.date
+                    tvValueBirthday.text = user.dob.date()
                     tvValueAddress.text = user.location.street.getStreet()
                     tvValuePhone.text = user.phone
                     tvValuePassword.text = user.login.password

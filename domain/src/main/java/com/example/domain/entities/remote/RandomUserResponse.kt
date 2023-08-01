@@ -1,5 +1,8 @@
 package com.example.domain.entities.remote
 
+import java.text.SimpleDateFormat
+import java.util.Date
+
 data class RandomUserResponse(
     val info: Info,
     val results: List<Result>
@@ -40,7 +43,7 @@ data class Location(
 data class Street(
     val name: String,
     val number: Int
-){
+) {
     fun getStreet() = "${this.number} ${this.name}"
 }
 
@@ -67,7 +70,20 @@ data class Login(
 data class Dob(
     val age: Int,
     val date: String
-)
+) {
+    private fun getDateFormant(): Date {
+        date.let {
+            val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+            return sdf.parse(it)
+        }
+    }
+
+    fun date(): String {
+        date.let {
+            return SimpleDateFormat("dd/MM/yyyy").format(getDateFormant())
+        }
+    }
+}
 
 data class Registered(
     val age: Int,
