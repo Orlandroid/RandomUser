@@ -8,6 +8,9 @@ import android.widget.ImageView
 import androidx.annotation.ColorRes
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.example.presentation.R
 
 
 fun View.visible() {
@@ -24,6 +27,12 @@ fun View.invisible() {
 
 fun ImageView.changeDrawableColor(color: Int) {
     this.setColorFilter(resources.getColor(color))
+}
+
+fun ImageView.loadImage(urlImage: String) {
+    Glide.with(context).load(urlImage).error(R.drawable.baseline_broken_image_24)
+        .placeholder(R.drawable.loading_animation)
+        .transition(DrawableTransitionOptions.withCrossFade()).circleCrop().into(this)
 }
 
 fun View.click(click: () -> Unit) {

@@ -3,20 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/usersFragment">
-
+    app:startDestination="@id/randomUserFragment">
     <fragment
-        android:id="@+id/usersFragment"
-        android:name="com.example.presentation.ui.users.UsersFragment"
-        android:label="UsersFragment"
-        tools:layout="@layout/fragment_users" >
-        <action
-            android:id="@+id/action_usersFragment_to_userDetailFragment"
-            app:destination="@id/userDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/userDetailFragment"
-        android:name="com.example.presentation.ui.userDetail.UserDetailFragment"
-        android:label="UserDetailFragment"
-        tools:layout="@layout/fragment_user_detail" />
+        android:id="@+id/randomUserFragment"
+        android:name="com.example.presentation.ui.random_user.RandomUserFragment"
+        android:label="RandomUserFragment"
+        tools:layout="@layout/fragment_random_user" />
 </navigation>

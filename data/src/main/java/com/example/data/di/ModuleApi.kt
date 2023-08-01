@@ -1,7 +1,6 @@
 package com.example.data.di
 
 
-
 import com.example.data.local.LocalDataSourceImpl
 import com.example.data.remote.Api
 import com.example.data.remote.RemoteDataSourceImpl
@@ -37,7 +36,7 @@ abstract class DataModule {
 object ModuleApi {
 
 
-    private const val BASE_URL = "https://api.storerestapi.com/"
+    private const val BASE_URL = "https://randomuser.me/"
 
     @Singleton
     @Provides

@@ -16,4 +16,10 @@
     <string name="empty">***************</string>
     <string name="t_tulo">Título</string>
     <string name="detalle">DETALLE</string>
+    <string name="hola_mi_nombre_es">Hola, mi nombre es:</string>
+    <string name="mi_correo_electr_nico_es">Mi correo electrónico es:</string>
+    <string name="mi_cumplea_os_es">Mi cumpleaños es:</string>
+    <string name="mi_domicilio_es">Mi domicilio es:</string>
+    <string name="mi_telefono_es">Mi telefono es :</string>
+    <string name="mi_contrase_a_es">Mi contraseña es:</string>
 </resources>

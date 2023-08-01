@@ -1,13 +1,13 @@
 package com.example.data.remote
 
 
-import com.example.domain.entities.remote.UsersResponse
+import com.example.domain.entities.remote.RandomUserResponse
 import retrofit2.http.GET
 
 
 interface Api {
 
-    @GET("users")
-    suspend fun getUser(): UsersResponse
+    @GET("api/")
+    suspend fun getRandomUser(): RandomUserResponse
 
 }

@@ -1,9 +1,9 @@
 package com.example.domain
 
-import com.example.domain.entities.remote.UsersResponse
+import com.example.domain.entities.remote.RandomUserResponse
 
 
 interface RemoteDataSource {
 
-    suspend fun getUser(): UsersResponse
+    suspend fun getRandomUser(): RandomUserResponse
 }
